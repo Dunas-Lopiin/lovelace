@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Formulário 2.0</title>
+        <style>
+        form {
+        margin: 0 auto;
+        width: 250px;
+        padding: 1em;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 1em;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        div, p {
+            font-size: 1.5em;
+            display: inline-block;
+            text-align: center;
+            width: 250px;
+            margin-bottom: 10px;
+        }
+
+
+
+        </style>
+    </head>
+
+    <body>
+        <h1>Exemplo de uso dos elementos de entrada</h1>
+      <form action="/pagina-processa-dados-do-form" method="post">
+        <div>
+            <label for="texto">Texto:</label>
+            <input id="texto" type="text">
+        </div>
+
+        <p>
+            <label for="pwd">Senha:</label>
+            <input type="password" id="pwd" name="password">
+        </p>
+        <p>
+            <label for="date">Data:</label>
+            <input id="date" type="date">
+        </p>
+        <p>
+            <label for="checkbox">Checkbox:</label>
+            <input id="checkbox" type="checkbox" name="check" value="comedia">
+        </p>
+         <p>
+          <label for="radio">Radio Button:</label>
+          <input id="radio" type="radio" name="rad" value="op1">
+        </p>
+        <p>
+            <label for="range">Range:</label>
+            <input type="range">
+        </p>
+
+        <div>
+            <input id="reset" type="reset" value="Reset">
+            <input id="submit" type="submit" value="Submit">
+        </div>
+        
+              
+      </form>
+    </body>
+</html>

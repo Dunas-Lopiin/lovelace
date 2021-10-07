@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Primeiro formulário</title>
+        <style>
+        form {
+        margin: 0 auto;
+        width: 250px;
+        padding: 1em;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 1em;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
+        label {
+        display: inline-block;
+        width: 200px;
+        text-align: center;
+        }
+
+        #reset{
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        </style>
+
+    </head>
+
+    <body>
+      <h1>Qual o genero de filmes que você mais gosta?</h1>
+      <form action="/pagina-processa-dados-do-form" method="post">
+         <p>
+          <label for="opcao1">Artes marciais</label>
+          <input id="opcao1" type="radio" name="genero" value="marciais">
+         </p>
+        <p>
+          <label for="opcao2">Ficção cientifica</label>
+           <input id="opcao2" type="radio" name="genero" value="scifi">
+         </p>
+         <p>
+           <label for="opcao3">Fantasia</label>
+           <input id="opcao3" type="radio" name="genero" value="fantasia">
+        </p>
+        <p>
+          <label for="opcao4">Comédia</label>
+           <input id="opcao4" type="radio" name="genero" value="comedia">
+        </p>
+         <p>
+          <label for="opcao5">Terror</label>
+          <input id="opcao5" type="radio" name="genero" value="terror">
+        </p>
+        <input id="reset" type="reset" value="Reset">
+              
+      </form>
+    </body>
+</html>

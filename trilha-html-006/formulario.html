@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Formulário organizado</title>
+        <style>
+        form {
+        margin: 0 auto;
+        width: 400px;
+        padding: 1em;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        div, p {
+            font-size: 1em;
+            display: inline-block;
+            text-align: center;
+            width: 400px;
+            margin-bottom: 10px;
+        }
+
+
+
+        </style>
+    </head>
+
+    <body>
+      <form action="/pagina-processa-dados-do-form" method="post">
+        <fieldset>
+            <legend>Formulário de inscrição</legend>
+            <p>
+                <label for="texto">Nome :</label>
+                <input id="texto" type="text">
+            </p>
+            <p>
+                <label for="email">E-mail:</label>
+                <input id="email" type="email">
+            </p>
+            <p>
+                <label for="pwd">Senha :</label>
+                <input type="password" id="pwd" name="password">
+            </p>
+            <p>
+                <label for="date">Data de nascimento:</label>
+                <input id="date" type="date">
+            </p>
+            <p>
+                <b>Gênero:</b>
+                <label for="masc">M:</label>
+                <input id="masc" type="radio" name="rad" value="op1">
+                <label for="fem">F:</label>
+                <input id="fem" type="radio" name="rad" value="op2">
+                <label for="out">Outro:</label>
+                <input id="out" type="radio" name="rad" value="op3">
+            </p>
+            <p>
+                <label for="range"><b>Você é mais ativo ou mais sedentário?</b></label>
+                <br />
+                <b>Sedentário</b>
+                <input type="range" min="1" max="10">
+                <b>Ativo</b>
+            </p>
+            <p>
+                <input id="checkbox" type="checkbox" name="check" value="comedia">
+                <label for="checkbox">Eu desejo receber notificações sobre novidades!</label>
+            </p>
+            <div>
+                <input id="reset" type="reset" value="Apagar tudo">
+                <input id="submit" type="submit" value="Enviar">
+            </div>
+        
+        </fieldset>     
+      </form>
+    </body>
+</html>
