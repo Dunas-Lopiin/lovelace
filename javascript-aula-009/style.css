@@ -1,0 +1,195 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:visited{
+    color: white;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%;
+    background-color: honeydew;
+}
+
+nav{
+    display: flex;
+    position: sticky;
+    top: 0;
+    min-height: 60px;
+    padding-left: 30px;
+    background-color: #7a75b5;
+    color: rgb(165, 165, 165);
+    margin: 0;
+    align-items: center;
+}
+
+nav img{
+    height: 50px;
+}
+
+article{
+    margin-bottom: 10px;
+}
+
+
+h1{
+    text-transform: uppercase;
+}
+
+#produto{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    font-size: 1.1em;
+    text-align: justify;
+    padding: 20px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 2px 2px 5px;
+}
+
+#produto img{
+    width: 25%;
+    border: solid 1px black;
+}
+
+#info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 30px;
+}
+
+
+#principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#escrever{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    min-height: 300px;
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+fieldset{
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 2px 2px 5px;
+}
+
+#escrever h2{
+    border-bottom: solid 1px black;
+    text-transform: uppercase;
+}
+
+#nota{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px black;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+#texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+#nome{
+    margin: 10px 0;
+    width: 500px;
+    border: solid 2px #524c97;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+#titu{
+    margin: 10px 0;
+    width: 500px;
+    border: solid 2px #524c97;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+#desc{
+    width: 500px;
+    height: 100px;
+    margin-bottom: 10px;
+    border: solid 2px #524c97;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+#avaliacao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    font-size: 1.2em;
+    padding: 20px;
+}
+
+#avaliacao h2{
+    text-transform: uppercase;
+}
+
+#comentario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 2px 2px 5px;
+    border-radius: 10px;
+    background-color: rgb(230, 230, 230);
+}
+#comentario h2{
+    text-decoration: underline;
+}
+
+#comentario fieldset{
+ 
+    border: none;
+    box-shadow: none;
+    width: 90%;
+    margin: 10px;
+}
+
+#titulo{
+    padding:0;
+    margin:0;
+}
+#paragrafo{
+    padding:0;
+    padding-left: 20px;
+    margin:0;
+}

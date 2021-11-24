@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Castelo Arcano - Sua loja de RPGs</title>
+</head>
+<body id="corpo">
+    <nav>
+        <a href="#"><img src="imagens/logo.png"></a>
+    </nav>
+
+    <main id="principal">
+        <article id="produto">
+            <img src="imagens/capa.png">
+            <div id="info">
+                <h2>Terra de Aventuras</h2>
+                <h3>R$10,00</h3>
+                <p>Terra de aventuras é um RPG genérico feito para introduzir novatos ao mundo do RPG de mesa. Em algumas paginas o sistema explica como criar personagens, inimigos e deixa uma pequena aventura para que vocês possam testar o sistema.
+                <br>Se aventurem em aventuras pelo espaço, lutem com magos maléficos ou se junte a uma organização secreta que caça monstros da noite. Sua imaginação é o limite!</p>
+            </div>
+        </article>
+        <article id="escrever">
+            <fieldset>
+                <h2>Escreva sua avaliação</h2>
+
+                <div id="texto">
+                    <input type="text" id="titu" name="titu" placeholder="Titulo da avaliação...">
+                    <textarea id="desc" placeholder="Escreva sua avaliação aqui..."></textarea>
+                </div>
+                <button onclick="ava()">Enviar</button>
+        </fieldset>
+        </article>
+
+        <article id="avaliacao">
+            <div id="comentario">
+                <h2>Comentários</h2>
+                <fieldset>
+                    <h3 id="titulo"></h3>
+                    <p id="paragrafo"></p>
+                </fieldset>
+                
+            </div>
+        </article>
+   </main>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
