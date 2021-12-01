@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Array</title>
+</head>
+<body>
+    <fieldset>
+        <h1>Insira os valores</h1>
+        <div id="campos">
+            <div>
+                <label for="numero1">Primeiro valor</label>
+                <input type="number" name="numero1" id="numero1" value="0">
+            </div>
+            <div>
+                <label for="numero2">Segundo valor</label>
+                <input type="number" name="numero2" id="numero2" value="0">
+            </div>
+            <div>
+                <label for="numero3">Terceiro valor</label>
+                <input type="number" name="numero3" id="numero3" value="0">
+            </div>
+            <div>
+                <label for="numero4">Quarto valor</label>
+                <input type="number" name="numero4" id="numero4" value="0">
+            </div>
+        </div>
+        <div id="botoes">
+            <button onclick="guardar()">Guardar numeros</button>
+            <button onclick="arrumar()">Inverter numeros</button>
+            <button onclick="crescente()">Ordem crescente</button>
+        </div>
+        <h2>(<span id="array">Os valores serão exibidos aqui!</span>) (<span id="array2"></span>) (<span id="array3"></span>)  (<span id="array4"></span>)</h2>
+    </fieldset>
+
+</body>
+
+<script src="organizar.js" defer></script>
+</html>
