@@ -38,6 +38,8 @@ const carros = {
         let velocidadeAtual = Math.random() * (vMax - vMin) + vMin;
         let derrapagemAtual = velocidadeAtual * derrapagem;
         let resultado = velocidadeAtual - derrapagemAtual;
+
+        /* Checa se deve mandar as informações para o HTML */
         if(escrito == 0){
             document.getElementById("tipo" + letra).innerHTML = obj.tipo;
             document.getElementById("vMin" + letra).innerHTML = vMin.toFixed(2) + " K/h";
@@ -46,12 +48,17 @@ const carros = {
             document.getElementById("derra" + letra).innerHTML = pD.toFixed(2) + "%";
         }
 
-        return resultado;
+        return resultado; //Usado para checar quem ganhou
     }
 
 
 function corrida(){
-    tipoCorrida = document.querySelector('input[name="campeonato"]:checked').value; //checa qual tipo de corrida foi escolhida
+    if(document.querySelector('input[name="campeonato"]:checked') && document.getElementById("personalizado").value == 0){
+        tipoCorrida = document.querySelector('input[name="campeonato"]:checked').value; //checa qual tipo de corrida foi escolhida
+    }
+    else{
+        tipoCorrida = document.getElementById("personalizado").value;
+    }
     vitoriaE = 0; //voltas que a Edna ganhou
     vitoriaJ = 0; //voltas que o juca ganhou
     vitoriaP = 0; //voltas que o pedro ganhou
