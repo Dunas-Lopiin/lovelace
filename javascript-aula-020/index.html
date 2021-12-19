@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Juros</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><h1>plinio F. S.</h1></li>
+        </ul>
+    </nav>
+    <main>
+        <article id="recibo">
+            <h2>NOVO RECIBO</h2>
+            <label for="nome">Nome do cliente:</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome aqui...">
+            <label for="data">Data de vencimento:</label>
+            <input type="date" name="data" id="data">
+            <label for="val">Valor da compra:</label>
+            <input type="number" name="val" id="val" placeholder="digite o valor da compra...">
+            <button onclick="recibo()">Armazenar informações</button>
+        </article>
+
+        <article id="output">
+            <h2>Vendas efetuadas</h2>
+            <table id="tabela">
+                <tr>
+                    <th>Cliente</th>
+                    <th>Vencimento</th>
+                    <th>Valor da compra</th>
+                    <th>Mora</th>
+                    <th>Juros</th>
+                    <th>Total a pagar</th>
+                  </tr>
+            </table>
+            <button onclick="reajuste()">Calcular juros</button>
+
+            <div class="separa" id="separa1">
+                <h2>Filtrar</h2>
+                <div class="filtros">
+                    <label for="valMin">Valor mínimo:</label>
+                    <input type="number" name="valMin" id="valMin" placeholder="digite o valor mínimo...">
+                    <label for="valMax">Valor maxímo:</label>
+                    <input type="number" name="valMax" id="valMax" placeholder="digite o valor máximo...">
+                </div>
+                <div class="filtros">
+                    <label for="dataMin">Data mínima:</label>
+                    <input type="date" name="dataMin" id="dataMin">
+                    <label for="dataMax">Data maxima:</label>
+                    <input type="date" name="dataMax" id="dataMax">
+                </div>
+                <button onclick="filtro()">Filtrar</button>
+                <table id="tabelaFiltro">
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Vencimento</th>
+                        <th>Valor da compra</th>
+                        <th>Mora</th>
+                        <th>Juros</th>
+                        <th>Total a pagar</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="separa" id="separa2">
+                <h2>Divida total</h2>
+                <button onclick="sortNome()">Organizar por nome</button>
+                <button onclick="sortData()">Organizar por data</button>
+                <table id="tabelaTotal">
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Valor</th>
+                    </tr>
+                </table>
+
+            </div>
+        </article>
+    </main>
+    <script src="calculo3.js" defer></script>
+</body>
+</html>
