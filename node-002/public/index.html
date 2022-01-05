@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pagina de consulta</title>
+</head>
+<body>
+    <fieldset>
+        <h2>Pesquise um usuário por:</h2>
+        <div class="input">
+            <label for="id">ID:</label>
+            <input type="number" name="id" id="id" placeholder="Digite a id do usuário aqui (somente numeros)...">
+            <button onclick="pesquisaId()">Pesquisar por id</button>
+        </div>
+        <div class="input">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" minlength="3" placeholder="Digite o nome do usuário aqui com 3 letras ou mais...">
+            <button onclick="pesquisaNome()">Pesquisar por nome</button>
+        </div>
+        <div class="input">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" placeholder="Digite o e-mail do usuário aqui...">
+            <button onclick="pesquisaEmail()">Pesquisar por E-mail</button>
+        </div> 
+    </fieldset>
+    <fieldset id="campo2">
+        <table id="tabela">
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+            </tr>
+        </table>
+    </fieldset>
+    <script src="script.js" defer></script>
+</body>
+</html>
