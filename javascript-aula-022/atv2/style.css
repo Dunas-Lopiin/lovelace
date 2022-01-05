@@ -1,0 +1,42 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    background-image: url('fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  
+h1 {
+    font-size: 1.5em;
+}
+h2 {
+    font-size: 1.3em;
+}
+p {
+    font-size: 1.1em;
+}
+
+#fabula{
+    margin: 0 auto;
+    padding: 20px;
+    width: 60%;
+    text-align: justify;
+    background-color: rgba(240, 248, 255, 0.8);
+}
+
+#botoes{
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+#tituloBot{
+    text-align: center;
+}
+
+#botoes button{
+    font-size: 1.2em;
+    font-weight: bold;
+}
