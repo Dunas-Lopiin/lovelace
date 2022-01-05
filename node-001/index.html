@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX teste</title>
+    <style>
+        fieldset{
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <h2>Buscar pelo id do item:</h2>
+        <input type="number" name="consulta" id="consulta" min="0" step="1" placeholder="digite a id do item aqui..." required>
+        <button onclick="consultar()">Consultar</button>
+        <p id="produtos"></p>
+    </fieldset>
+    <script>
+        function consultar(){
+
+            const xhttp = new XMLHttpRequest();
+            let id = document.getElementById("consulta").value;
+            if (id == ""){
+                alert("Por favor preencha o campo id para consultar um produto.");
+            }
+            else{
+                id = parseFloat(id);
+                let verificacao = Number.isInteger(id);
+                if(!verificacao && id != ""){
+                    alert("Pesquisa inválida, por favor utilize um número intero para consultar um produto!");
+                }
+                else{
+                    xhttp.onreadystatechange = function (){
+                        if(this.readyState == 4 && this.status == 200){
+                            let p = document.getElementById("produtos");
+                           p.innerHTML = this.responseText;
+                        }
+                    }
+                    xhttp.open("GET", "produtos/" + id, true);
+                    xhttp.send();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
