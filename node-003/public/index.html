@@ -9,22 +9,17 @@
 </head>
 <body>
     <fieldset>
-        <h2>Pesquise um usuário por:</h2>
         <div class="input">
-            <label for="id">ID:</label>
-            <input type="number" name="id" id="id" placeholder="Digite a id do usuário aqui (somente numeros)...">
-            <button onclick="pesquisaId()">Pesquisar por id</button>
+            <div>
+                <label for="dropPesquisa">Pesquisar por</label>
+                <select name="pesquisa" id="dropPesquisa">
+                    <option value="id">Id</option>
+                    <option value="nome">Nome</option>
+                    <option value="email">E-mail</option>
+                </select>
+            </div>
+            <input type="text" name="consulta" id="consulta" placeholder="Digite a sua pesquisa aqui...">
         </div>
-        <div class="input">
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" minlength="3" placeholder="Digite o nome do usuário aqui com 3 letras ou mais...">
-            <button onclick="pesquisaNome()">Pesquisar por nome</button>
-        </div>
-        <div class="input">
-            <label for="email">E-mail:</label>
-            <input type="email" name="email" id="email" placeholder="Digite o e-mail do usuário aqui...">
-            <button onclick="pesquisaEmail()">Pesquisar por E-mail</button>
-        </div> 
     </fieldset>
     <fieldset id="campo2">
         <table id="tabela">

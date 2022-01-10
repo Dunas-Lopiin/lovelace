@@ -1,4 +1,10 @@
-function escreverTotal(item){
+const tipoPesquisa = document.getElementById("dropPesquisa");
+const consulta = document.getElementById("consulta");
+let intervalo = false;
+let timeOutId;
+consulta.addEventListener('input', pesquisa);
+
+function escreverTabela(item){
   let linha = document.createElement("tr");
   let id = document.createElement("td");
   let nome = document.createElement("td");
@@ -27,9 +33,75 @@ function limparTabela(){
   document.getElementById("tabela").appendChild(linha);
 }
 
-function pesquisaId(){
-    let id = document.getElementById("id").value;
-    fetch('/usuarios/id/' + id)
+function contagem(){
+  let tipoPesquisaAtual = tipoPesquisa.value;
+  let consultaAtual = consulta.value;
+  if(tipoPesquisaAtual == "id"){
+    pesquisarNoServidor();
+  }
+  else if(consultaAtual.length >= 3){
+    pesquisarNoServidor();
+  }
+  intervalo = false;
+}
+
+tipoPesquisa.addEventListener('change', (event) => {
+  intervalo = false;
+  consulta.value = "";
+});
+
+function pesquisa(){
+  let tipoPesquisaAtual = tipoPesquisa.value;
+  let consultaAtual = consulta.value;
+  consultaAtual = consultaAtual.toString().trim();
+  if(consultaAtual == ""){
+
+  }
+  else{
+    if(consultaAtual.length < 3){
+      if(tipoPesquisaAtual == "id"){
+        if (!intervalo){
+          pesquisarNoServidor();
+          intervalo = true;
+          setTimeout(contagem, 2000);
+        }
+      }
+    }
+    else if(consultaAtual.length >= 3){
+      if(tipoPesquisaAtual == "nome"){
+        if (!intervalo){
+          pesquisarNoServidor();
+          intervalo = true;
+          setTimeout(contagem, 2000);
+        }
+      }
+      else if(tipoPesquisaAtual == "id"){
+        if (!intervalo){
+          pesquisarNoServidor();
+          intervalo = true;
+          setTimeout(contagem, 2000);
+        } 
+      }
+      else if(tipoPesquisaAtual == "email"){
+        if (!intervalo){
+          pesquisarNoServidor();
+          intervalo = true;
+          setTimeout(contagem, 2000);
+        }
+      }
+    }
+  }
+}
+function pesquisarNoServidor(){
+  let tipoDeConsulta = document.getElementById("dropPesquisa").value;
+  let consulta = document.getElementById("consulta").value;
+  tipoDeConsulta = tipoDeConsulta.toString();
+  consulta = consulta.toString().trim();
+  if(consulta == ""){
+
+  }
+  else{
+    fetch('/usuarios/' + tipoDeConsulta + '/' + consulta)
     .then(
       function(response) {
         if (response.status !== 200) {
@@ -37,73 +109,17 @@ function pesquisaId(){
             response.status);
           return;
         }
-        // Escreve a resposta em uma tabela
+        // Examine the text in the response
         response.json().then(function(data) {
-          console.log(data);
           limparTabela();
           data.forEach(element => {
-            escreverTotal(element);
+            escreverTabela(element);
           });
         });
       }
     )
     .catch(function(err) {
       console.log('Fetch Error :-S', err);
-    });
-}
-
-function pesquisaNome(){
-  let nome = document.getElementById("nome").value;
-  fetch('/usuarios/nome/' + nome)
-  .then(
-    function(response) {
-      if (response.status !== 200) {
-        console.log('Temos problemas: Código  ' +
-          response.status);
-        return;
-      }
-      // Escreve a resposta em uma tabela
-      nome = nome.toString();
-      if(nome.length < 3){
-        alert("Favor digitar um nome com 3 ou mais letras!");
-      }
-      else{
-        response.json().then(function(data) {
-          console.log(data);
-          limparTabela();
-          data.forEach(element => {
-            escreverTotal(element);
-          });
-        });
-      }
-    }
-  )
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err);
-  });
-}
-
-function pesquisaEmail(){
-  let email = document.getElementById("email").value;
-  fetch('/usuarios/email/' + email)
-  .then(
-    function(response) {
-      if (response.status !== 200) {
-        console.log('Temos problemas: Código  ' +
-          response.status);
-        return;
-      }
-      // Escreve a resposta em uma tabela
-      response.json().then(function(data) {
-        console.log(data);
-        limparTabela();
-        data.forEach(element => {
-          escreverTotal(element);
-        });
-      });
-    }
-  )
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err);
-  });
+    });     
+  }
 }
