@@ -20,7 +20,6 @@ function leituraMatriz(_array, _linhaAtual, _colunaAtual){
     if(leituraMatriz(_array, _linhaAtual, _colunaAtual+1) === 1){
         return 1;
     }
-    console.log("ultima coluna");
     return leituraMatriz(_array, _linhaAtual +1, 0);
 }
 
