@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Adicionar Funcionários</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Adicione funcionários aqui</legend>
+        <label for="nome">Nome:</label>
+        <input class="area" type="text" name="nome" id="nome" placeholder="Digite o nome aqui...">
+
+        <label for="matricula">Matricula:</label>
+        <input class="area" type="number" name="matricula" id="matricula" placeholder="Digite a matricula aqui...">
+
+
+        <label for="ramal">Ramal:</label>
+        <input class="area" type="number" name="ramal" id="ramal" placeholder="Digite o ramal aqui...">
+
+        <label for="email">E-mail:</label>
+        <input class="area" type="email" name="email" id="email" placeholder="Digite o e-mail aqui..."> 
+
+        <div class="campo">
+            <h2>Setor</h2>
+            <div class="radio">
+                <input type="radio" id="limpeza" value="limpeza" name="setor">
+                <label for="limpeza">Limpeza</label>
+                <input type="radio" id="construcao" value="construção" name="setor">
+                <label for="construcao">Construção</label>
+                <input type="radio" id="design" value="design" name="setor">
+                <label for="design">Design</label>
+                <input type="radio" id="vendas" value="vendas" name="setor">
+                <label for="vendas">Vendas</label> 
+            </div>
+        </div>
+
+        <label for="nascimento">Data de nascimento:</label>
+        <input class="area" type="date" name="nascimento" id="nascimento">
+        <button id="cadastro">Cadastrar</button>
+    </fieldset>
+
+    <script src="scripts/adicionar.js"></script>
+</body>
+</html>

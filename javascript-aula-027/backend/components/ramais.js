@@ -16,6 +16,6 @@ module.exports.organizarRamais = (_lista) => {
 */
     let somenteRamal = organizado.map(function(_elemento){
         return [_elemento.Nome, _elemento.Ramal];
-    })  
+    })
     return somenteRamal;
 }

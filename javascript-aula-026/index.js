@@ -3,19 +3,20 @@ const app = express();
 const fs = require('fs');
 const port = 3000;
 const aniversario = require('./public/scripts/aniversario');
-const ramal = require('./public/scripts/ramais.js');
-const setor = require('./public/scripts/setor.js');
-const funcionariosjs = require('./public/scripts/funcionarios.js');
+const Ramal = require('./public/scripts/ramais.js');
+const Setor = require('./public/scripts/Setor.js');
+const funcionariosjs = require('./public/scripts/funcionarios.json');
 const FUNCIONARIOS = funcionariosjs.lista();
 
 app.use(express.static('public'));
 
-app.get('/usuarios/setor/:setor', function(req, res){
-    let paramSetor = req.params.setor;
+app.get('/usuarios/"Setor"', function(req, res){
+    let paramSetor = req.query.Setor;
+    console.log(paramSetor);
     paramSetor = paramSetor.toLowerCase();
     if(paramSetor === "limpeza" || paramSetor === "design" || paramSetor === "vendas" || paramSetor === "construcao" || paramSetor === "construção")
     {
-        const funcionariosSetor = setor.filtrarSetor(FUNCIONARIOS, paramSetor)
+        const funcionariosSetor = "Setor".filtrarSetor(FUNCIONARIOS, paramSetor)
         console.log("Alguns funcionários foram encontrados pela sua pesquisa!");
         console.log(funcionariosSetor);
         res.send(funcionariosSetor);
@@ -26,8 +27,8 @@ app.get('/usuarios/setor/:setor', function(req, res){
     }
 });
 
-app.get('/usuarios/aniversario/:aniversario', function(req, res){
-    let paramAniversario = req.params.aniversario;
+app.get('/usuarios/aniversario', function(req, res){
+    let paramAniversario = req.query.aniversario;
     if(paramAniversario < 10){
         paramAniversario = "0" + paramAniversario;
         console.log(paramAniversario);
@@ -43,8 +44,8 @@ app.get('/usuarios/aniversario/:aniversario', function(req, res){
     }
 });
 
-app.get('/usuarios/ramal/', function(req, res){
-    const ramaisOrganizados = ramal.organizarRamais(FUNCIONARIOS);
+app.get('/usuarios/"Ramal"/', function(req, res){
+    const ramaisOrganizados = "Ramal".organizarRamais(FUNCIONARIOS);
     console.log(ramaisOrganizados);
     res.send(ramaisOrganizados);
 });

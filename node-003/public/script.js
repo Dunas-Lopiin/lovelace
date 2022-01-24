@@ -98,7 +98,7 @@ function pesquisarNoServidor(){
   tipoDeConsulta = tipoDeConsulta.toString();
   consulta = consulta.toString().trim();
   if(consulta == ""){
-
+    return false;
   }
   else{
     fetch('/usuarios/' + tipoDeConsulta + '/' + consulta)
