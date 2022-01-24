@@ -6,19 +6,21 @@ btCadastro.addEventListener('click', registrar);
 
 function registrar(){
     let novoUsuario = {};
+    let Nascimento = [];
     novoUsuario.Nome = document.getElementById("nome").value;
     novoUsuario.Matricula = document.getElementById("matricula").value;
     novoUsuario.Ramal = document.getElementById("ramal").value;
     novoUsuario.Email = document.getElementById("email").value;
     novoUsuario.Setor = document.querySelector('input[name="setor"]:checked').value;
-    novoUsuario.Nascimento = document.getElementById("nascimento").value;
-    //console.log(formulario);
+    Nascimento.push(document.getElementById("nascimento").value);
+    Nascimento = Nascimento[0].split('-');
+    Nascimento = Nascimento.reverse();
+    novoNascimento = Nascimento[0] + "/" + Nascimento[1] + "/" + Nascimento[2];
+    novoUsuario.Nascimento = novoNascimento;
     acessarBack(novoUsuario);
 }
 
 function acessarBack(_usuario){
-  //_usuario = JSON.stringify(_usuario);
-    //console.log(_usuario);
     fetch(apiUrl,{
       method: 'POST',
       headers:  {'Content-Type': 'application/json'},

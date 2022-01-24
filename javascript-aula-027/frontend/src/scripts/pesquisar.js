@@ -4,7 +4,6 @@ const urlSetor = 'http://localhost:3000/usuarios/setor?setor='
 
 const tipoPesquisa = document.getElementById("drop-pesquisa");
 const consulta = document.getElementById("pesquisar");
-let x = 0;
 consulta.addEventListener('click', acessarBack);
 
 function escreverTabela(item){
@@ -33,7 +32,6 @@ function escreverTabelaRamal(item){
     ramal.innerHTML = item[1];
     linha.append(nome, ramal);
     document.getElementById("tabela").appendChild(linha);
-    x++;
   }
 
   function limparTabelaRamal(){

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pagina do servidor</title>
+</head>
+<body>
+    <fieldset>
+        <div class="input">
+            <h2>Pesquisar cliente</h2>
+            <div>
+                <label for="dropPesquisa">Pesquisar por</label>
+                <select name="pesquisa" id="dropPesquisa">
+                    <option value="id">Id</option>
+                    <option value="nome">Nome</option>
+                    <option value="email">E-mail</option>
+                </select>
+            </div>
+            <input type="text" name="consulta" id="consulta" placeholder="Digite a sua pesquisa aqui...">
+        </div>
+    </fieldset>
+    <fieldset id="campo2">
+        <table id="tabela">
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset id="field-meio">
+        <div class="input">
+            <h2>Adicionar cliente</h2>
+            <label for="add-id">Id</label>
+            <input type="number" name="add-id" id="add-id" placeholder="Digite o Id a ser adicionado...">
+            <label for="add-nome">Nome</label>
+            <input type="text" name="add-nome" id="add-nome" placeholder="Digite o nome a ser adicionado...">
+            <label for="add-email">Nome</label>
+            <input type="email" name="add-email" id="add-email" placeholder="Digite o e-mail a ser adicionado...">
+            <button id="bt-adicionar">Adicionar dados</button>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="input">
+            <h2>Excluir cliente</h2>
+            <div>
+                <label for="drop-excluir">Encontrar cliente por:</label>
+                <select name="pesquisa" id="drop-excluir">
+                    <option value="id">Id</option>
+                    <option value="nome">Nome</option>
+                    <option value="email">E-mail</option>
+                </select>
+            </div>
+            <input type="text" name="excluir" id="excluir" placeholder="Digite a sua pesquisa aqui...">
+        </div>
+    </fieldset>
+    <fieldset id="campo-excluir">
+        <table id="tabela-excluir">
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+            </tr>
+        </table>
+        <button id="bt-excluir">Excluir</button>
+    </fieldset>
+    <script src="script.js" defer></script>
+</body>
+</html>

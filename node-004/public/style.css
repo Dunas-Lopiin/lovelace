@@ -1,0 +1,56 @@
+fieldset{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+td, th {
+    border: 1px solid #b6b5b5;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+fieldset input, fieldset label, fieldset button{
+    margin-top: 10px;
+}
+fieldset h2{
+    text-align: center;
+}
+
+.input{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 3px double black;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.input label{
+    align-self: center;
+}
+
+.input button{
+    width: 30%;
+    align-self: center;
+}
+
+#field-meio{
+    margin: 15px auto;
+}

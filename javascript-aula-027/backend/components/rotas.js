@@ -9,8 +9,8 @@ const { json } = require('express/lib/response');
 const fs = require('fs');
 app.use(express.json());
 
+
 function rotaSetor(req, res){
-    FUNCIONARIOS = require('./funcionarios.json');
     let paramSetor = req.query.setor;
     console.log(paramSetor);
     paramSetor = paramSetor.toLowerCase();
@@ -28,7 +28,6 @@ function rotaSetor(req, res){
 }
 
 function rotaAniversario(req, res){
-    FUNCIONARIOS = require('./funcionarios.json');
     let paramAniversario = req.query.aniversario;
     if(paramAniversario < 10){
         paramAniversario = "0" + paramAniversario;
@@ -46,13 +45,11 @@ function rotaAniversario(req, res){
 }
 
 function rotaRamal(req, res){
-    FUNCIONARIOS = require('./funcionarios.json');
     const ramaisOrganizados = Ramal.organizarRamais(FUNCIONARIOS);
     res.send(ramaisOrganizados);
 }
 
 function adicionarUsuario(req, res){
-    FUNCIONARIOS = require('./funcionarios.json');
     let novoFuncionario = req.body;
     let invoices = JSON.parse(fs.readFileSync('components/funcionarios.json', 'utf8'));
     invoices.push(novoFuncionario);
@@ -61,11 +58,6 @@ function adicionarUsuario(req, res){
     if(err) console.log(err);
     res.send({error: false, msg: 'the invoice has been saved'});
   })
-    /* fs.appendFile('teste.json', novoFuncionario ,(err)=>{
-        if(err) throw err;
-        res.send(novoFuncionario);
-    }) */
-    //res.send(novoFuncionario);
 }
 
 module.exports.ramal = rotaRamal;
