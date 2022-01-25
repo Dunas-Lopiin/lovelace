@@ -1,5 +1,6 @@
 const tipoPesquisa = document.getElementById("dropPesquisa");
 const consulta = document.getElementById("consulta");
+const excluir = document.getElementById("bt-excluir");
 let intervalo = false;
 let timeOutId;
 consulta.addEventListener('input', pesquisa);

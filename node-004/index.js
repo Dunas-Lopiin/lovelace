@@ -44,7 +44,7 @@ app.get('/usuarios/email/:email', function(req, res){
     function filtrarEmail(query) {
         return CLIENTES.filter(function(el){
             query = query.toString();
-            let filtro = el.email.t10oString().indexOf(query.toLowerCase()) > -1;
+            let filtro = el.email.toString().indexOf(query.toLowerCase()) > -1;
             return filtro;
         })
     }
