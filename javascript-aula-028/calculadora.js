@@ -21,6 +21,10 @@ class calculadora {
     }
     getResult(){
         this.setOperand2(valorPassado);
+        if(this.operand2 === "0" && this.operation === "/"){
+            alert("não é possivel dividir por zero!");
+            return false;
+        }
         this.operand1 = parseInt(this.operand1, 10);
         this.operand2 = parseInt(this.operand2, 10);
         let resultado = eval(this.operand1 + this.operation + this.operand2);
