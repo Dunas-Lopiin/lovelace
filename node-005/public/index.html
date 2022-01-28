@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css"">
+    <title>Pagina do servidor</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><h1>PLINIO FIGUEIREDO DOS SANTOS</h1></li>
+        </ul>
+    </nav>
+    <div class="input">
+        <h2>O que deseja fazer?</h2>
+        <select id="opcoes">
+            <option value="pesquisar">Pesquisar Produto</option>
+            <option value="excluir">Excluir Produto</option>
+        </select>
+        <label for="id">Id</label>
+        <input type="number" name="id" id="id" placeholder="Digite o Id aqui...">
+        <button id="bt-pesquisa">Modificar dados</button>
+    </div>
+    <fieldset id="campo">
+        <table id="tabela">
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+            </tr>
+        </table>
+    </fieldset>
+
+    <div class="input">
+        <h2>O que deseja fazer?</h2>
+        <select id="opcoes2">
+            <option value="adicionar">Adicionar Produto</option>
+            <option value="atualizar">Atualizar Produto</option>
+        </select>
+        <label for="id2">Id</label>
+        <input type="number" name="id2" id="id2" placeholder="Digite o Id aqui...">
+        <label for="nome2">Nome</label>
+        <input type="text" name="nome2" id="nome2" placeholder="Digite o nome aqui...">
+        <button id="bt-modificar">Modificar dados</button>
+    </div>
+    <fieldset id="campo2">
+        <table id="tabela2">
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+            </tr>
+        </table>
+    </fieldset>
+
+    <script src="scripts/request.js"></script>
+</body>
+</html>

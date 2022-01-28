@@ -9,6 +9,7 @@
   "author": "plinio figueiredo",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.2",
     "save": "^2.4.0"
   }
 }
