@@ -14,9 +14,9 @@ app.get('/usuarios/aniversario', rota.aniversario);
 
 app.get('/usuarios/ramal/', rota.ramal);
 
-app.get('/calculadora', rota.calculadora);
-
 app.post('/usuarios/adicionar/', rota.adicionar);
+
+app.get('/calculadora/', rota.calculadora);
 
 app.listen(port, function() {
     console.log('O servidor está sendo executado na porta ' + port + '!');

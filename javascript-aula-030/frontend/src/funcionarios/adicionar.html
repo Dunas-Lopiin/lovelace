@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Adicionar Funcionários</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Adicione funcionários aqui</legend>
+        <label for="nome">Nome:</label>
+        <input class="area" type="text" name="nome" id="nome" placeholder="Digite o nome aqui...">
+
+        <label for="matricula">Matricula:</label>
+        <input class="area" type="number" name="matricula" id="matricula" placeholder="Digite a matricula aqui...">
+
+
+        <label for="ramal">Ramal:</label>
+        <input class="area" type="number" name="ramal" id="ramal" placeholder="Digite o ramal aqui...">
+
+        <label for="email">E-mail:</label>
+        <input class="area" type="email" name="email" id="email" placeholder="Digite o e-mail aqui..."> 
+
+        <div class="campo">
+            <h2>Setor</h2>
+            <div>
+                <select name="setor" id="drop-setor">
+                    <option value="Accounting">Accounting</option>
+                    <option value="Business Development">Business Development</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Human Resources">Human Resources</option>
+                    <option value="Legal">Legal</option>
+                    <option value="Management">Management</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Research and Development">Research and Development</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Services">Services</option>
+                    <option value="Support">Support</option>
+                    <option value="Training">Training</option>
+                </select>
+            </div>
+        </div>
+
+        <label for="nascimento">Data de nascimento:</label>
+        <input class="area" type="date" name="nascimento" id="nascimento">
+        <button id="cadastro">Cadastrar</button>
+    </fieldset>
+
+    <script src="scripts/adicionar.js"></script>
+</body>
+</html>

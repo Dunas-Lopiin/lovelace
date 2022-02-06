@@ -117,6 +117,7 @@ function atualizarUsuario(_usuario){
           else if(data){
             alert("Produto atualizado com sucesso!");
             limparConsulta();
+            pesquisarGeral("atualizar");
           }
         });
       }
@@ -144,6 +145,7 @@ function acessarBack(_usuario){
       response.json().then(function(data) {
         alert("Produto adicionado com sucesso!");
         limparConsulta();
+        pesquisarGeral("adicionar");
     })
     }
   )
@@ -279,6 +281,7 @@ function excluirUsuario(){
           else if(data)
             alert("Produto excluido com sucesso!");
             limparConsultaP();
+            pesquisarGeral("excluir");
         });
       }
     )
@@ -287,3 +290,35 @@ function excluirUsuario(){
     });     
   }
 }
+
+function pesquisarGeral(tipo){
+  fetch('/produto/all')
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Temos problemas: Código  ' +
+          response.status);
+        return;
+      }
+      // Examine the text in the response
+      response.json().then(function(data) {
+        if(tipo === "excluir"){
+          limparTabelaPesquisa();
+          data.forEach(element => {
+            escreverTabelaPesquisa(element);
+          });
+          limparConsultaP();
+        }
+        else if(tipo === "adicionar" || tipo === "atualizar"){
+          limparTabela();
+          data.forEach(element => {
+            escreverTabela(element);
+          });
+        }
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+};

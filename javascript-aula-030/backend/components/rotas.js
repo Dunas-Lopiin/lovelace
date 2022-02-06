@@ -1,7 +1,7 @@
 const aniversario = require('./aniversario.js');
 const Ramal = require('./ramais.js');
 const Setor = require('./setor.js');
-const Calculadora = require('./calcBack.js');
+const Calculadora = require('./calculadora.js');
 const express = require('express');
 const app = express();
 let FUNCIONARIOS = require('./database.json');
@@ -28,22 +28,20 @@ function rotaSetor(req, res){
 }
 
 function rotaCalculadora(req, res){
-    let valor1 = req.query.operador1;
-    let valor2 = req.query.operador2;
-    let operador = req.query.operando;
-    if(operador === "mais"){
-        operador = "+";
+    let valor = req.params.valor;
+    if(Calculadora.calcular.final){
+        Calculadora.calcular.clearCalculator();
+        Calculadora.calcular.setEnd();
     }
-    let calcular = Calculadora.calculadora();
-    console.log(valor1 + "/" + valor2 + "/" + operador);
-    calcular.setOperand1(valor1);
-    calcular.setOperand2(valor2);
-    calcular.setOperation(operador);;
-    let resultado = calcular.getResult();
-    resultado = "[" + resultado + "]";
-    calcular.clearCalculator();
+    let resultado = Calculadora.calcular.defineStep(valor);
     console.log(resultado);
     res.send(resultado);
+    /* if(calcular.final){
+            calcular.clearCalculator();
+            calcular.setEnd();
+        }
+        calcular.defineStep(e.target.value);
+      } */
 }
 
 function rotaAniversario(req, res){
