@@ -1,10 +1,10 @@
-const aniversario = require('./aniversario.js');
-const Ramal = require('./ramais.js');
-const Setor = require('./setor.js');
-const Calculadora = require('./calcBack.js');
+const aniversario = require('./funcionarios/aniversario');
+const Ramal = require('./funcionarios/ramais.js');
+const Setor = require('./funcionarios/setor.js');
+const Calculadora = require('./calculadora/calcBack.js');
 const express = require('express');
 const app = express();
-let FUNCIONARIOS = require('./database.json');
+let FUNCIONARIOS = require('./funcionarios/database.json');
 const { json } = require('express/lib/response');
 const fs = require('fs');
 app.use(express.json());
@@ -70,10 +70,10 @@ function rotaRamal(req, res){
 
 function adicionarUsuario(req, res){
     let novoFuncionario = req.body;
-    let invoices = JSON.parse(fs.readFileSync('components/database.json', 'utf8'));
+    let invoices = JSON.parse(fs.readFileSync('components/funcionarios/database.json', 'utf8'));
     invoices.push(novoFuncionario);
 
-    fs.writeFile('components/database.json', JSON.stringify(invoices), (err) => {
+    fs.writeFile('components/funcionarios/database.json', JSON.stringify(invoices), (err) => {
     if(err) console.log(err);
     res.send({error: false, msg: 'the invoice has been saved'});
   })

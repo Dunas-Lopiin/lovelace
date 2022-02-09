@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    function calculadora() {
+    function calculadora(_operador1, _operador2, _operacao) {
         let operand1;
         let operand2;
         let operation;
@@ -14,8 +14,8 @@ $(document).ready(function(){
             operand2 = _operand2;
         }
         function setOperation(_operation){
-            $("#operacao1").text(operand1);
-            $("#operador").text(operation);
+            $(_operador1).text(operand1);
+            $(_operacao).text(operation);
             operation = _operation;
         }
         function getResult(){
@@ -46,10 +46,10 @@ $(document).ready(function(){
         }
 
         function showResult(resultado){
-            $("#operacao1").text("");
-            $("#operador").text("");
-            $("#operacao2").text("");
-            $("#operacao1").text(resultado);
+            $(_operador1).text("");
+            $(_operacao).text("");
+            $(_operador2).text("");
+            $(_operador1).text(resultado);
             final = true;
             return resultado;
         }
@@ -59,22 +59,22 @@ $(document).ready(function(){
             operand2 = undefined;
             operation = undefined;
             valorPassado = "";
-            $("#operacao1").text("");
-            $("#operador").text("");
-            $("#operacao2").text("");
+            $(_operador1).text("");
+            $(_operacao).text("");
+            $(_operador2).text("");
         }
         
         function getValue(num){
             if(operand1 === undefined){
                 const operacao1 = valorPassado + num;
                 valorPassado = operacao1;
-                $("#operacao1").text(operacao1);
+                $(_operador1).text(operacao1);
                 return operacao1;
             }
             else if(operand1 !== undefined){
                 const operacao2 = valorPassado + num;
                 valorPassado = operacao2;
-                $("#operacao2").text(operacao2);
+                $(_operador2).text(operacao2);
                 return operacao2;
             }
         }
@@ -95,8 +95,8 @@ $(document).ready(function(){
                 else if(operand1 === undefined && valorPassado !== undefined){
                     setOperand1(valorPassado);
                     setOperation(element);
-                    $("#operacao1").text(operand1);
-                    $("#operador").text(operation);
+                    $(_operador1).text(operand1);
+                    $(_operacao).text(operation);
                     valorPassado = "";
                     return false;
                 }
@@ -128,7 +128,7 @@ $(document).ready(function(){
         }
     }
 
-    const calcular = calculadora();
+    const calcular = calculadora("#operacao1", "#operacao2", "#operador");
     
     $("#bt-calculadora").on("click", e =>{
         if (e.target.matches('button')) {
