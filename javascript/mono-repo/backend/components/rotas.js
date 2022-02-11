@@ -5,6 +5,7 @@ const Calculadora = require('./calculadora/calcBack.js');
 const express = require('express');
 const app = express();
 let FUNCIONARIOS = require('./funcionarios/database.json');
+let GAMES = require('./game/game.json');
 const { json } = require('express/lib/response');
 const fs = require('fs');
 app.use(express.json());
@@ -79,8 +80,25 @@ function adicionarUsuario(req, res){
   })
 }
 
+function addGame(req, res){
+    let novoGame = req.body;
+    let invoices = JSON.parse(fs.readFileSync('components/game/game.json', 'utf8'));
+    invoices.push(novoGame);
+
+    fs.writeFile('components/game/game.json', JSON.stringify(invoices), (err) => {
+    if(err) console.log(err);
+    res.send({error: false, msg: 'the invoice has been saved'});
+  })
+}
+
+function showGames(req, res){
+    res.send(GAMES);
+}
+
 module.exports.ramal = rotaRamal;
 module.exports.aniversario = rotaAniversario;
 module.exports.setor = rotaSetor;
 module.exports.adicionar = adicionarUsuario;
 module.exports.calculadora = rotaCalculadora;
+module.exports.game = addGame;
+module.exports.show = showGames;

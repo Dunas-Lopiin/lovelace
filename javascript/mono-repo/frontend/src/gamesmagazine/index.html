@@ -4,40 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Gamesmagazine</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><h1>plinio F. S.</h1></li>
+        </ul>
+    </nav>
     <main>
-        <fieldset>
-            <div>
-                <h2>Adicionar um novo jogo:</h2>
-                <div>
-                    <label for="game">Nome do jogo:</label>
-                    <input id="game-form" name="game" type="text" placeholder="digite o nome do jogo aqui...">
-                </div>
-                <div>
-                    <label for="year">Ano do jogo:</label>
-                    <input id="game-year" name="year" type="number" placeholder="digite o ano aqui...">
-                </div>
-                <div>
-                    <label for="genre">Gênero do jogo:</label>
-                    <input id="game-genre" name="genre" type="text" placeholder="digite o gênero aqui...">
-                </div>
-                <div>
-                    <label for="mult">Possui multiplayer?</label>
-                    <input id="game-mult" name="mult" type="checkbox">
-                </div>
-                <div>
-                    <label for="offline">Possui modo offline?</label>
-                    <input id="game-off" name="offline" type="checkbox">
-                </div>
-                <div>
-                    <label for="cross">Possui modo crossplataform?</label>
-                    <input id="game-cross" name="cross" type="checkbox">
-                </div>
-                <button id="gravar">Adicionar jogos</button>       
+        <div class="cont">
+            <h2>Adicionar um novo jogo:</h2>
+            <div class="formulario">
+                <label for="game">Nome do jogo:</label>
+                <input id="game-name" name="game" type="text" placeholder="digite o nome do jogo aqui...">
             </div>
-        </fieldset>
+            <div class="formulario">
+                <label for="year">Ano do jogo:</label>
+                <input id="game-year" name="year" type="number" placeholder="digite o ano aqui...">
+            </div>
+            <div class="formulario">
+                <label for="genre">Gênero do jogo:</label>
+                <input id="game-genre" name="genre" type="text" placeholder="digite o gênero aqui...">
+            </div>
+            <div class="formulario">
+                <label for="mult">Possui multiplayer?</label>
+                <select id="game-mult" name="mult">
+                    <option>Sim</option>
+                    <option>Não</option>
+                </select>
+            </div>
+            <div class="formulario">
+                <label for="offline">Possui modo offline?</label>
+                <select id="game-off" name="mult">
+                    <option>Sim</option>
+                    <option>Não</option>
+                </select>
+            </div>
+            <div class="formulario">
+                <label for="cross">Possui modo crossplataform?</label>
+                <select id="game-cross" name="mult">
+                    <option>Sim</option>
+                    <option>Não</option>
+                </select>
+            </div>
+            <button id="gravar">Adicionar jogos</button>       
+        </div>
+
+        <div id="conteudo" class="cont">
+            <table id="tabela">
+            </table>
+        </div>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

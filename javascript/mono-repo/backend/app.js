@@ -18,6 +18,10 @@ app.get('/calculadora', rota.calculadora);
 
 app.post('/usuarios/adicionar/', rota.adicionar);
 
+app.route('/games')
+    .get(rota.show)
+    .post(rota.game)
+
 app.listen(port, function() {
     console.log('O servidor está sendo executado na porta ' + port + '!');
 });
