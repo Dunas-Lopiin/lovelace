@@ -38,6 +38,10 @@ function escreverTabela(_array){
 
 }
 
+function esperarPesquisa(){
+  setTimeout(pesquisa, 1000);
+}
+
 function pesquisa(){
   $.ajax({url: apiUrl})
   .done((data)=> {
@@ -62,7 +66,7 @@ function acessarBack(_game){
       }
       response.json().then(function(data) {
         console.log("foi");
-        pesquisa();
+        esperarPesquisa();
     })
     }
   )
