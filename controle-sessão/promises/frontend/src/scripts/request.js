@@ -2,15 +2,16 @@ const urlNumero = 'http://localhost:3000/promise/'
 
 function pesquisar(){
     const chamarBack = new Promise((resolve, reject) => {
-        let numero = parseInt(Math.random() * (5 - 0) + 0);
-        console.log(numero);
-        if(numero > 3){
-            setTimeout(() =>{
+        let timer = parseInt((Math.random() * (5 - 0) + 0) * 1000);
+        console.log(timer);
+        if(timer > 3000){
+            reject("CONEXÃO REJEITADA POR TIMEOUT!");
+/*             setTimeout(() => {
                 reject("CONEXÃO REJEITADA POR TIMEOUT!");
-            }, 3000)
+            }, 3000) */
         }
         else{
-            fetch(urlNumero + numero*1000)
+            fetch(urlNumero + timer)
             .then(
                 function (response){
                 if (response.status !== 200) {
@@ -28,8 +29,8 @@ function pesquisar(){
 
     chamarBack.then((resposta) => {
         console.log(resposta)
-    }).catch((resposta) =>{
-        console.log(resposta)
+    }).catch((erro) =>{
+        console.log(erro)
     })
     
 }

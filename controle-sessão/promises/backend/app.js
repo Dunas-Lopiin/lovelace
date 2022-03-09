@@ -11,46 +11,15 @@ app.get('/promise/:numero', (req, res) => {
     let numero = parseInt(req.params.numero);
     console.log(numero);
     function funcaoY(num){
-        const myRamdomNumber = Math.random() * (num + 0) - 0;
+        const myRamdomNumber = parseInt(Math.random() * (num + 0) - 0);
         return myRamdomNumber;
     }
-    const comparacao = new Promise((resolve, reject) => {
-        try {
-            resolve(funcaoY(100));
-        } catch (e) {
-            console.log("promise rejeitada por causa do erro: " + e);
-            reject(e);
-        }
-    })
-    
-    setTimeout(() =>{
-        comparacao
-        .then((resposta) =>  res.send({resposta}))
-        .catch((erro) => console.log("temos um problema: " + erro))
 
-    comparacao
-        .then(resposta => { console.log(resposta) }, erro => { console.log("esse erro " + erro) })
+    setTimeout(() => {
+        let randomNumber = funcaoY(100);
+        console.log(randomNumber);
+        res.send({randomNumber});
     }, numero);
-
-    /* const comparacao = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            try {
-                console.log("testando promise");
-                resolve(funcaoY(10));
-            } catch (e) {
-                console.log("promise rejeitada por causa do erro: " + e);
-                reject(e);
-            }
-        }, numero);
-    })
-
-    comparacao
-        .then((resposta) =>  res.send({resposta}))
-        .catch((erro) => console.log("temos um problema: " + erro))
-
-    comparacao
-        .then(resposta => { console.log(resposta) }, erro => { console.log("esse erro " + erro) })
- */
 });
 
 
