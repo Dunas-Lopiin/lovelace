@@ -1,0 +1,27 @@
+banco de dados
+
+entidade: a representação de um objeto representado com dados.
+
+relacionamentos são os vinvulos entre entidades.
+
+relacional: as entidades se relacionam e para isso as entidades precisam de um identificador único.
+
+banco de dados relacional: tabelas e relações.
+
+tabela, conjunto e dados, sendo que o dado é a menor unidade de um registro (como o nome de uma cidade especifica no registro Cidades).
+
+uma chave primaria NUNCA DEREVA SE REPETIR!!!
+
+Informações que seriam compostas devem ser separadas em registros (ex: endereço vira cidade, estado, país).
+
+comparação de strings são custosas
+
+Chaves estrangeiras (FK) podem ser chaves primarias.
+
+a chave primaria (PK) é composta por todos os campos de um registro marcados como chave primaria. (Ex: se id, ddd e telefone estão marcados como chave primaria a pk final sera o conjunto dos 3 dados)
+
+Primeira forma normal: Não deve haver grupo de dados repetidos, todos os valores devem ser únicos
+
+segunda forma normal: Toda tabela deve somente possuir dados que competem a ela. Todos os dados não chave primaria devem depender da chave primaria.
+
+terceira forma normal: Dados estrangeiros relacionados a dados não identificantes não podem estar em minha tabela
