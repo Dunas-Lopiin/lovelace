@@ -5,10 +5,9 @@ function pesquisar(){
         let timer = parseInt((Math.random() * (5 - 0) + 0) * 1000);
         console.log(timer);
         if(timer > 3000){
-            reject("CONEXÃO REJEITADA POR TIMEOUT!");
-/*             setTimeout(() => {
+             setTimeout(() => {
                 reject("CONEXÃO REJEITADA POR TIMEOUT!");
-            }, 3000) */
+            }, 3000);
         }
         else{
             fetch(urlNumero + timer)

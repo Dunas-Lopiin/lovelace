@@ -25,3 +25,5 @@ Primeira forma normal: Não deve haver grupo de dados repetidos, todos os valore
 segunda forma normal: Toda tabela deve somente possuir dados que competem a ela. Todos os dados não chave primaria devem depender da chave primaria.
 
 terceira forma normal: Dados estrangeiros relacionados a dados não identificantes não podem estar em minha tabela
+
+soft delete: No banco de dados a unidade de registro é marcada como deletada, mas ela ainda está no banco de dados. A aplicação deve verificar os dados marcados como deletados e tratá-los da forma correta.
