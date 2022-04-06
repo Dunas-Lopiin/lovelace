@@ -1,0 +1,18 @@
+--SELECT RENDA	
+
+SELECT 
+	eleitores.id AS id_eleitor
+	,eleitores.nome AS nome_eleitor
+	,data_nascimento AS nascimento_eleitor
+	,renda.nome AS faixa_renda
+	,nivel.nome AS nivel_escolar
+	
+FROM
+	public.eleitores AS eleitores
+	
+INNER JOIN public.eleitores_renda AS renda
+	ON renda.id = eleitores.renda_id
+	
+INNER JOIN public.eleitores_nivel_escolar AS nivel
+	ON nivel.id = eleitores.nivel_escolar_id
+	
